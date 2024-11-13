@@ -1,0 +1,26 @@
+{
+    "name": "d-ai-vote",
+    "version": "1.0.0",
+    "description": "AI-Integrated Blockchain Voting",
+    "main": "index.js",
+    "scripts": {
+      "client:start": "cd client && npm start",
+      "client:install": "cd client && npm install",
+      "contract:compile": "cd smart-contract && truffle compile",
+      "contract:migrate": "cd smart-contract && truffle migrate --network rinkeby",
+      "contract:test": "cd smart-contract && truffle test",
+      "ai:train": "cd ai-integration && python model/voting_model.py",
+      "ai:predict": "cd ai-integration && python predictions/predict.py",
+      "install-all": "npm run client:install && cd smart-contract && npm install && cd ../ai-integration && pip install -r requirements.txt",
+      "start": "npm run client:start"
+    },
+    "dependencies": {
+      "dotenv": "^16.0.0",
+      "web3": "^1.8.0"
+    },
+    "devDependencies": {
+      "truffle": "^5.8.0",
+      "ganache-cli": "^6.12.2"
+    },
+    "license": "MIT"
+  }
